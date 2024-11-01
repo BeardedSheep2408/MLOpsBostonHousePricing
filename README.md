@@ -34,6 +34,8 @@ git status
 git add .
 
 git commit -m "MESSAGE HERE"
+
+git push origin main
 '''
 
 
