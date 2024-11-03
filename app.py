@@ -16,11 +16,15 @@ def home():
 @app.route('/predict_api',methods=['POST'])
 def predict_api():
     data = request.json['data']
+
     print(data)
-    print(np.array(list(data.values())[0]).reshape(1,-1))
-    new_data = scaler.transform(np.array(data.iloc[0,:-1]).reshape(1,-1))
+    print(np.array(list(data.values())).reshape(1,-1))
+    
+    new_data = scaler.transform(np.array(list(data.values())).reshape(1,-1))
+    
     output = model.predict(new_data)
     print(output[0])
+
     return jsonify(output[0])
 
 if __name__=="__main__":

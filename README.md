@@ -31,7 +31,7 @@ git config --global user.email
 git add requirements.txt
 git reset requirements.txt
 git status
-git add .
+git add .    
 
 git commit -m "MESSAGE HERE"
 
